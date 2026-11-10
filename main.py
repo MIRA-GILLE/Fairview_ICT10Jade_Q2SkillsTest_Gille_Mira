@@ -19,11 +19,13 @@ elements = {
 
 
 def periodic_element(e):
-    element_Name = document.getElementById("elements").value.strip().title()
-    not_applicable = elements.get(element_Name, ("Element not found", "-", "-"))
+
+#refresh for not_applicable
+    element = document.getElementById("periodic_table").value.strip().title()
+    not_applicable = elements.get(element, ("Element not found", "-", "-"))
 
     document.getElementById("div_name").innerHTML = f"""
-        Symbol: {element_Name}
+        Symbol: {element}
         <br>
         Element: {not_applicable[0]}
         <br>
@@ -31,14 +33,4 @@ def periodic_element(e):
         <br>
         Atomic Mass: {not_applicable[2]}
     """
-
-def show_periodic_element(e):
-    document.getElementById("div_name").innerHTML = ""
-    element_symbol = document.getElementById("elements").value.strip().title()
-
-    is_in_the_periodic_table = element_symbol in elements
-    element_symbols = list(elements.keys())
-
-    display("The number of elements is", len(elements), target="div_name")
-    display("Is it in the periodic table?", is_in_the_periodic_table, target="div_name")
-    display("What are the elements in the list?", element_symbols, target="div_name")
+    element_symbol = document.getElementById("periodic_table").value.strip().title()
