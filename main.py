@@ -18,15 +18,18 @@ elements = {
 }
 
 
-def periodic(e):
+def periodic_element(e):
     element_Name = document.getElementById("elements").value.strip().title()
-    var2 = elements.get(element_Name, ("Element not found", "-", "-"))
+    not_applicable = elements.get(element_Name, ("Element not found", "-", "-"))
 
     document.getElementById("div_name").innerHTML = f"""
-        Symbol: {element_Name}<br>
-        Element: {var2[0]}<br>
-        Atomic Number: {var2[1]}<br>
-        Atomic Mass: {var2[2]}
+        Symbol: {element_Name}
+        <br>
+        Element: {not_applicable[0]}
+        <br>
+        Atomic Number: {not_applicable[1]}
+        <br>
+        Atomic Mass: {not_applicable[2]}
     """
 
 def show_periodic_element(e):
