@@ -24,7 +24,7 @@ def periodic_element(e):
     element = document.getElementById("periodic_table").value.strip().title()
     not_applicable = elements.get(element, ("Element not found", "-", "-"))
 
-    document.getElementById("div_name").innerHTML = f"""
+    document.getElementById("input_name").innerHTML = f"""
         Symbol: {element}
         <br>
         Element: {not_applicable[0]}
